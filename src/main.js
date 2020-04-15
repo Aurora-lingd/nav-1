@@ -44,6 +44,8 @@ const render = () => {
             e.stopPropagation()
             hashMap.splice(index, 1)
             render()
+            let string = JSON.stringify(hashMap)
+            localStorage.setItem('x', string)
         })
     })
 }
@@ -59,19 +61,14 @@ $('.addButton').on('click', () => {
 
     hashMap.push({
         logo: simplifyUrl(url)[0].toUpperCase(),
-        logoType: 'text',
         url: url
     });
     hashMap.sort(compare)
     render()
+    let string = JSON.stringify(hashMap)
+    localStorage.setItem('x', string)
 });
 
-window.onbeforeunload = () => {
-
-    const string = JSON.stringify(hashMap)
-    localStorage.setItem('x', string)
-
-}
 const compare = (a, b) => {
     let textA = a.logo.toUpperCase();
     let textB = b.logo.toUpperCase();
@@ -84,6 +81,18 @@ $(document).on('keypress', (e) => {
     for (let i = 0; i < hashMap.length; i++) {
         if (hashMap[i].logo.toLowerCase() === key) {
             window.open(hashMap[i].url)
+        }
+
+    }
+
+})
+$('.input').on('keypress', (e) => {
+    const { key } = e
+    for (let i = 0; i < hashMap.length; i++) {
+        if (hashMap[i].logo.toLowerCase() === key) {
+            if (e.stopPropagation) e.stopPropagation();
+            else e.cancelBubble = true;
+
         }
     }
 
