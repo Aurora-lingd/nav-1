@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>前航-前端导航网站</title>
+    <style type="text/css">
+        .icon {
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header class="globalHeader">
+        <form class="searchForm" method="GET" action="https://www.baidu.com/s">
+            <input type="text" name="wd">
+            <span class="icon-wrapper">
+                <svg class="icon">
+                    <use xlink:href="#icon-sousuo"></use>
+                </svg>
+            </span>
+            <button type="submit">搜索</button>
+        </form>
+    </header>
+    <main class="globalMain">
+        <ul class="siteList">
+            <li class="last">
+                <div class="addButton">
+                    <div class="icon-wrapper">
+                        <svg class="icon">
+                            <use xlink:href="#icon-jia-"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        新增网站
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script src="//at.alicdn.com/t/font_1753003_sfjnqr8n45.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
